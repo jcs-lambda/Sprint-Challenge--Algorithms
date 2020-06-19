@@ -6,7 +6,7 @@ a) Linear time: O(n)
 
 As the size of n increases, the runtime increases by the same rate.
 
-b) Exponential time: O(2^n)
+b) Exponential time: O(2^n)  - n log n
 
 As the size of n increases, the runtime increases by a much faster rate.
 
