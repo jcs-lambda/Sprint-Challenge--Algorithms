@@ -96,27 +96,36 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
+        # Using None as divider flag between sorted and unsorted,
+        # plant flag at beginning of list + grab first value
         self.swap_item()
 
-        while True:
+        # while not at end of list -> continue sorting
+        while self.can_move_right():
+            # while going right succeeds -> find and carry lowest value
             while self.move_right():
+                # if list value < carrying value -> swap
                 if self.compare_item() == 1:
                     self.swap_item()
+                # save a move timer penality if at end of list
                 if not self.can_move_right():
                     break
-                
+            
+            # currently carrying lowest value
+            # while not at beginning of list -> keep going left
             while self.move_left():
+                # if found flag, we are at the end of sorted list ->
+                # place carried value (lowest) + grab flag,
+                # move right, place flag + grab next value to sort
                 if self.compare_item() is None:
                     self.swap_item()
                     self.move_right()
                     self.swap_item()
                     break
-                if not self.can_move_left():
-                    break
-
-            if not self.can_move_right():
-                self.swap_item()
-                break
+        
+        # cannot move right = end of list
+        # end of list contains None flag, so swap with current item
+        self.swap_item()
 
 
 if __name__ == "__main__":
