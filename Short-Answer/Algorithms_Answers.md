@@ -2,13 +2,13 @@
 
 ## Exercise I
 
-a) Polynomial time: O(n^3)
+a) Linear time: O(n)
 
-As the size of n increases, the runtime increases by faster rate.
+As the size of n increases, the runtime increases by the same rate.
 
-b) Polynomial time: O(n^2)
+b) Exponential time: O(2^n)
 
-As the size of n increases, the runtime increases by a faster rate.
+As the size of n increases, the runtime increases by a much faster rate.
 
 c) Linear time: O(n)
 
